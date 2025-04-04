@@ -4,7 +4,9 @@ import Leaf from "@/components/Leaf";
 import Navbar from "@/components/Navbar";
 import { useState } from "react";
 import { AlertDialog, AlertDialogContent, AlertDialogTrigger } from "@/components/ui/alert-dialog";
-import { X } from "lucide-react";
+import { X, ArrowLeft } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [activeContent, setActiveContent] = useState<string | null>(null);
@@ -109,13 +111,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-agri-lightGreen/30 to-white">
       <div className="container mx-auto px-4 py-4">
-        <header className="mb-4 text-center">
-          <div className="flex items-center justify-center gap-2 mb-1">
+        <div className="flex items-center justify-between mb-4">
+          <Link to="/">
+            <Button variant="ghost" className="text-agri-green hover:bg-agri-lightGreen/20">
+              <ArrowLeft className="mr-2" size={16} />
+              Back to Home
+            </Button>
+          </Link>
+          
+          <div className="flex items-center justify-center gap-2">
             <Leaf className="h-8 w-8 text-agri-green" />
             <h1 className="text-3xl font-bold text-agri-green">AgriBot</h1>
           </div>
-          <p className="text-gray-600">Smart Farming Assistant</p>
-        </header>
+          
+          <div className="w-[100px]"></div> {/* Empty div for balanced centering */}
+        </div>
+        
+        <p className="text-gray-600 text-center mb-4">Smart Farming Assistant</p>
         
         <Navbar 
           onNavItemClick={(item) => setActiveContent(item)}
