@@ -1,6 +1,6 @@
 
 import AgriBot from "@/components/AgriBot";
-import { Leaf } from "lucide-react";
+import Leaf from "@/components/Leaf";
 
 const Index = () => {
   return (
