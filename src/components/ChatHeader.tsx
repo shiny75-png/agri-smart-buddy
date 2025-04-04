@@ -1,7 +1,6 @@
 
 import { Sun, CloudRain, MapPin } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
-import { Leaf } from "@/components/Leaf"; // Import Leaf from our components folder
 
 interface ChatHeaderProps {
   selectedLanguage: string;
